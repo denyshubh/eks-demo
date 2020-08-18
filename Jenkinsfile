@@ -6,23 +6,30 @@ pipeline {
     }
     stages {
         stage('Testing out git repo') {
-            echo 'Checkout...'
-            checkout scm
+            steps {
+                echo 'Checkout...'
+                checkout scm
+            }
         }
 
         stage('Testing environment') {
-            echo 'Testing environment...'
-            sh 'git --version'
-            echo "Branch: ${env.BRANCH_NAME}"
-            sh 'docker -v'
+            steps {
+                echo 'Testing environment...'
+                sh 'git --version'
+                echo "Branch: ${env.BRANCH_NAME}"
+                sh 'docker -v'
+                sh 'kubectl version'
+            }
         }
 
         stage('Build Docker Image') {
-            echo 'Building Docker image...'
-            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
-                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                sh "docker builder build -t ${env.DOCKER_IMAGE_NAME} ."
-                sh "docker push ${env.DOCKER_IMAGE_NAME}"
+            steps {
+                echo 'Building Docker image...'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
+                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                    sh "docker builder build -t ${env.DOCKER_IMAGE_NAME} ."
+                    sh "docker push ${env.DOCKER_IMAGE_NAME}"
+                }
             }
         }
         stage('CanaryDeploy') {
