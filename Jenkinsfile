@@ -17,13 +17,9 @@ pipeline {
             sh 'docker -v'
         }
 
-        // stage("Docker Lint Test") {
-        //     echo 'Checking Proper Linting...'
-        //     sh ' /home/ubuntu/.linuxbrew/Cellar/hadolint/1.18.0/bin/hadolint Dockerfile'
-        // }
         stage('Build Docker Image') {
             echo 'Building Docker image...'
-            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+            withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                 sh "docker builder build -t ${env.DOCKER_IMAGE_NAME} ."
                 sh "docker push ${env.DOCKER_IMAGE_NAME}"
@@ -39,7 +35,7 @@ pipeline {
             steps {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube-canary.yml',
+                    configs: 'canary/*.yaml',
                     enableConfigSubstitution: true
                 )
             }
@@ -56,12 +52,12 @@ pipeline {
                 milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube-canary.yml',
+                    configs: 'canary/*.yaml',
                     enableConfigSubstitution: true
                 )
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube.yml',
+                    configs: 'stable/*.yaml',
                     enableConfigSubstitution: true
                 )
             }
