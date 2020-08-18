@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend-service-stable
+spec:
+  type: LoadBalancer
+  selector:
+    app: myportfolio
+    type: frontend
+    track: stable
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30008
+    targetPort: 4000

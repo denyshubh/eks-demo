@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-deployment-canary
+  labels:
+    app: myportfolio
+    type: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myportfolio
+      type: frontend
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: myportfolio
+        type: frontend
+        track: stable
+    spec:
+      containers:
+      - name: portfolio
+        image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
+        ports:
+        - containerPort: 4000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 4000
+          initialDelaySeconds: 15
+          timeoutSeconds: 1
+          periodSeconds: 10

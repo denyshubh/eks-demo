@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend-service-canary
+spec:
+  type: LoadBalancer
+  selector:
+    app: myportfolio
+    type: frontend
+    track: canary
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 30009
+    targetPort: 4000
