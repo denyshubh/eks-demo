@@ -39,11 +39,7 @@ pipeline {
                 CANARY_REPLICAS = 1
             }
             steps {
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'portfolio-deploy-canary.yaml',
-                    enableConfigSubstitution: true
-                )
+                kubernetesDeploy configs: 'canary/*.yaml', kubeconfigId: 'kubeconfig'
             }
         }
         stage('DeployToProduction') {
