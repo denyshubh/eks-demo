@@ -18,7 +18,6 @@ pipeline {
                 sh 'git --version'
                 echo "Branch: ${env.BRANCH_NAME}"
                 sh 'docker -v'
-                sh 'kubectl version'
             }
         }
 
@@ -73,7 +72,7 @@ pipeline {
     post {
         cleanup {
             echo 'Cleaning up...'
-            sh "docker system prune"
+            sh "docker system prune -f"
         }
     }
 }
