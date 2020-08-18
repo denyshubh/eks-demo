@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Testing environment...'
                 sh 'git --version'
-                echo "Branch: ${env.BRANCH_NAME}"
+                echo "Branch: ${env.GIT_BRANCH}"
                 sh 'docker -v'
             }
         }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'canary/*.yaml',
+                    configs: 'portfolio-deploy-canary.yaml',
                     enableConfigSubstitution: true
                 )
             }
@@ -58,12 +58,12 @@ pipeline {
                 milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'canary/*.yaml',
+                    configs: 'portfolio-deploy-canary.yaml',
                     enableConfigSubstitution: true
                 )
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'stable/*.yaml',
+                    configs: 'portfolio-deploy.yaml',
                     enableConfigSubstitution: true
                 )
             }
