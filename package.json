@@ -1,0 +1,30 @@
+{
+  "name": "express-react-starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "morgan": "^1.8.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-ga": "^2.3.5",
+    "react-scripts": "1.0.17",
+    "react-mdl": "^1.11.0",
+    "react-router-dom": "^4.2.2",
+    "eslint-config-airbnb": "^15.1.0",
+    "bulma": "^0.5.0",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

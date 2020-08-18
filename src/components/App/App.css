@@ -1,0 +1,216 @@
+/* Resume Page css */
+.resume-right-col {
+  background: #27221F;
+  color: white;
+  padding: 2em;
+}
+
+/* Social Links Icon */
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.social-links i {
+  color: black;
+  font-size: 3em;
+  padding: 5px;
+}
+
+
+/* ---------- PROFILE IMAGE ---------------- */
+
+.image_outer_container {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.image_inner_container {
+  border-radius: 50%;
+  padding: 5px;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+}
+
+.image_inner_container img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.image_outer_container .green_icon {
+  background-color: #4cd137;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+  height: 30px;
+  width: 30px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+/* Background Image to Landing Page */
+.bg {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project-card {
+  margin-top: 8%;
+  margin-left: 8%;
+}
+
+.card:hover {
+  -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 9px 40px -12px rgba(0, 0, 0, 0.75);
+}
+
+/* contact page */
+.contact-list {
+  font-size: 30px;
+  font-family: 'Anton';
+}
+
+/* ---------- font size on small screen --------------- */
+@media screen and (max-width: 1000px) {
+  h1.title {
+    font-size: 1.75em;
+    font-weight: bolder;
+  }
+
+  h2.name {
+    font-size: 1.75em;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  div.tab {
+    margin-top: 10vh;
+  }
+
+  span.contact-list {
+    font-size: 20px;
+    font-family: 'Anton'
+  }
+}
+
+
+/* TEST SCRIPT */
+
+.pages .Contact {
+  margin: 10px;
+}
+
+.pages .Contact .icon-wrappers-container {
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.pages .Contact .icon-wrappers-container .social-icons-wrapper {
+  margin: 5px;
+}
+
+.pages .Contact .icon-wrappers-container:hover {
+  overflow: hidden;
+}
+
+.pages .Contact .icon-wrappers-container a {
+  font-size: 25px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: block;
+  margin: 20px calc(50% - 21px);
+  white-space: nowrap;
+  padding: 10px;
+  padding-top: 9px;
+  padding-left: 14px;
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.1s cubic-bezier(0.64, 0.09, 0.08, 1);
+  font-family: Roboto, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pages .Contact .icon-wrappers-container a i {
+  margin-right: 20px;
+  transition: margin-right 0.1s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+.pages .Contact .icon-wrappers-container a:hover {
+  width: 160px;
+  z-index: 1000;
+  transform: translateX(-50px);
+}
+
+.pages .Contact .icon-wrappers-container a:hover i {
+  margin-right: 10px;
+}
+
+.pages .Contact .icon-wrappers-container a:hover:after {
+  content: attr(data-name);
+}
+
+.pages .Contact a.linkedin {
+  background: #4875b4;
+}
+
+.pages .Contact a.twitter {
+  background: #03a9f4;
+}
+
+.pages .Contact a.stack-overflow {
+  background: #fe7a15;
+}
+
+.pages .Contact a.stack-overflow:hover {
+  width: 220px;
+}
+
+.pages .Contact a.facebook {
+  background: #3b5998;
+  padding-left: 18px;
+}
+
+.pages .Contact a.github {
+  background: #333;
+}
+
+.pages .Contact a.codepen {
+  background: #000;
+  padding-left: 12px;
+}
+
+.pages .Contact a.google-plus {
+  background: #c63d2d;
+}
+
+.pages .Contact a.google-plus:hover {
+  width: 200px;
+}
+
+.pages .Contact a.fire {
+  background: green;
+}
+
+.pages .Contact a.fire:hover {
+  width: 250px;
+}

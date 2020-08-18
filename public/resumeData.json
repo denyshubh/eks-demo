@@ -1,0 +1,137 @@
+{
+  "main": {
+    "name": "Shubham Kumar Singh",
+    "occupation": "Student",
+    "description": "currently studying at Indian Institute of Information Technology Ranchi. My major is in Computer Science and Technology.",
+    "image": "profilepic.png",
+    "bio": "Hi, I’m Shubham, an Undergraduate student at IIIT Ranchi, major in Computer Science and Engineering. I'm a highly motivated student with a goal-driven work ethic. I have a strong curiosity for Data Science and computer Vision Architect, Also I'm well versed in Cloud Computing, Networking, full-stack development using trending technologies (React js, Koa and express, ORM, Node js, etc). I have an ample amount of experience in Web Development, having Interned with GalaxyCard. I have received the Bertelsmann Challenge Cloud Scholarship and Intel Edge AI Scholarship. Something that I’d love to do is combine my passion for learning and teaching with my development skills and build people-centric products.",
+    "contactmessage": "Please do contact with me for Job and Internship offers.",
+    "email": "sksingh.btech.cs17@iiitranchi.ac.in",
+    "phone": "(+91)-9304225752",
+    "address": {
+      "street": "IIIT Ranchi, Sirkha Toli, Namkum",
+      "city": "Ranchi",
+      "state": "Jharkhand",
+      "zip": "834010"
+    },
+    "website": "http://www.knsonline.tech",
+    "resumedownload": "https://drive.google.com/file/d/1T81Zp4Fv3wEV6gmsqiapz-peeu6r5Mb1/view?usp=sharing",
+    "social": [
+      {
+        "name": "facebook",
+        "url": "http://facebook.com/denyshubham",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/denyshubham",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "http://instagram.com/ssshubham_28",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "github",
+        "url": "http://github.com/denyshubh",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "Full Stack Web Developer",
+    "education": [
+      {
+        "school": "Indian Institute of Information Technology Ranchi",
+        "degree": "B-Tech in Computer Science and Technology",
+        "graduated": "May 2021",
+        "description": "Describe your experience at school, what you learned, what useful skills you have acquired etc."
+      }
+    ],
+    "work": [
+      {
+        "company": "Galaxy Card",
+        "title": "Web Developer",
+        "years": "June 2019 - Aug 2019",
+        "description": "Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Git",
+        "level": "60%"
+      },
+      {
+        "name": "Illustrator",
+        "level": "55%"
+      },
+      {
+        "name": "ReactJs",
+        "level": "50%"
+      },
+      {
+        "name": "CSS",
+        "level": "90%"
+      },
+      {
+        "name": "HTML5",
+        "level": "80%"
+      },
+      {
+        "name": "VueJs",
+        "level": "50%"
+      },
+      {
+        "name": "MongoDB",
+        "level": "80%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Canadian Wanderlust",
+        "category": "My Travel Blog for my post-university travels",
+        "image": "canadian-wanderlust.jpg",
+        "url": "https://www.canadianwanderlust.com"
+      },
+      {
+        "title": "Fury Fighting Gear",
+        "category": "(offline now) A fighting gear company I started",
+        "image": "fury-fighting-gear.jpg",
+        "url": "http://www.timbakerdev.com"
+      },
+      {
+        "title": "Original Thai Food",
+        "category": "Website I built for a restaurant I like in Thailand",
+        "image": "original-thai-food.jpg",
+        "url": "http://www.timbakerdev.com/originalthaifood.github.io"
+      },
+      {
+        "title": "Resume Website",
+        "category": "A React based resume website template",
+        "image": "resume-website.jpg",
+        "url": "http://www.timbakerdev.com"
+      },
+      {
+        "title": "Smirkspace",
+        "category": "(MVP Only) A React and Meteor based chat University project.",
+        "image": "smirkspace.jpg",
+        "url": "http://www.smirkspace.com"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.",
+        "user": "Kareem Abdul Jabbar"
+      },
+      {
+        "text": "That Tim Baker must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
+        "user": "Steve Wozniak... impersonator"
+      }
+    ]
+  }
+}
