@@ -48,11 +48,9 @@ pipeline {
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
-                steps {
-                    sh "kubectl delete deploy portfolio-deployment-canary"
-                    sh "kubectl apply -f stable/frontend-svc.yaml"
-                    sh "kubectl apply -f stable/portfolio-deploy.yaml"
-                }
+                sh "kubectl delete deploy portfolio-deployment-canary"
+                sh "kubectl apply -f stable/frontend-svc.yaml"
+                sh "kubectl apply -f stable/portfolio-deploy.yaml"
             }
         }
     }
