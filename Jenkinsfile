@@ -33,39 +33,26 @@ pipeline {
         }
         stage('CanaryDeploy') {
             when {
-                branch 'master'
-            }
-            environment { 
-                CANARY_REPLICAS = 1
+                branch 'test'
             }
             steps {
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'portfolio-deploy-canary.yaml',
-                    enableConfigSubstitution: true
-                )
+                sh "kubectl apply -f canary/frontend-svc-canary.yaml"
+                sh "kubectl apply -f canary/portfolio-deploy-canary.yaml"
             }
         }
         stage('DeployToProduction') {
             when {
-                branch 'master'
+                branch 'test'
             }
-            environment { 
-                CANARY_REPLICAS = 0
-            }
+
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'portfolio-deploy-canary.yaml',
-                    enableConfigSubstitution: true
-                )
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'portfolio-deploy.yaml',
-                    enableConfigSubstitution: true
-                )
+                steps {
+                    sh "kubectl delete deploy portfolio-deployment-canary"
+                    sh "kubectl apply -f canary/frontend-svc.yaml"
+                    sh "kubectl apply -f canary/portfolio-deploy.yaml"
+                }
             }
         }
     }
