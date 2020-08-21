@@ -57,6 +57,7 @@ pipeline {
     post {
         cleanup {
             echo 'Cleaning up...'
+            sh "kubectl delete deploy portfolio-deployment-canary"
             sh "docker system prune -f"
         }
     }
