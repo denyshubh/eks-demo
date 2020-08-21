@@ -35,7 +35,7 @@ class Landing extends Component {
       <section>
         <div className="card text-center">
           <div className="card-header">
-            <h1 className="text-center text-capitalize font-weight-bold title text-primary">Full Stack Web Developer</h1>
+            <h1 className="text-center text-capitalize font-weight-bold title text-primary">DevOps Engineer</h1>
           </div>
           <div className="card-body">
             <h3 className="card-title font-weight-bold">My Skills</h3>
