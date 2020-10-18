@@ -6,7 +6,7 @@ metadata:
     app: myportfolio
     type: frontend
 spec:
-  replicas: $CANARY_REPLICAS
+  replicas: 1
   selector:
     matchLabels:
       app: myportfolio
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: portfolio
-        image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
+        image: denyshubh/portfolio
         ports:
         - containerPort: 4000
         livenessProbe:
