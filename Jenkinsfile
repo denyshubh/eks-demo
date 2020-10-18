@@ -31,33 +31,10 @@ pipeline {
                 }
             }
         }
-        stage('CanaryDeploy') {
-            when {
-                branch 'test'
-            }
-            steps {
-                sh "kubectl apply -f canary/frontend-svc-canary.yaml"
-                sh "kubectl apply -f canary/portfolio-deploy-canary.yaml"
-            }
-        }
-        stage('DeployToProduction') {
-            when {
-                branch 'test'
-            }
-
-            steps {
-                input 'Deploy to Production?'
-                milestone(1)
-                sh "kubectl delete deploy portfolio-deployment-canary"
-                sh "kubectl apply -f stable/frontend-svc.yaml"
-                sh "kubectl apply -f stable/portfolio-deploy.yaml"
-            }
-        }
     }
     post {
         cleanup {
             echo 'Cleaning up...'
-            sh "kubectl delete deploy portfolio-deployment-canary"
             sh "docker system prune -f"
         }
     }
