@@ -1,3 +1,5 @@
+[![Build Status](http://52.249.196.235:8080/buildStatus/icon?job=demo-multibranch%2Fmaster)](http://52.249.196.235:8080/job/demo-multibranch/job/master/)
+
 # Express React Starter
 
 This is a template for using Express and React in the same project. It is based on Create React App.
