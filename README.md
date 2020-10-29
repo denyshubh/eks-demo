@@ -1,4 +1,4 @@
-[![Build Status](http://52.249.196.235:8080/buildStatus/icon?job=demo-multibranch%2Fmaster)](http://52.249.196.235:8080/job/demo-multibranch/job/master/)
+[![Build Status](http://13.68.189.243:8080/buildStatus/icon?job=demo-multibranch%2Fmaster)](http://52.249.196.235:8080/job/demo-multibranch/job/master/)
 
 # Express React Starter
 
